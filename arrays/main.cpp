@@ -29,6 +29,25 @@ void print_string_array(const std::vector<std::string>& array) {
 
 }
 
+void read_input_till_42() {
+
+    std::vector<int> nums;
+    int input;
+
+    std::cout << "Type in a number, preferably 42: ";
+    std::cin >> input;
+    nums.push_back(input);
+
+    while (nums.back() != 42) {
+        std::cout << "Type in a number, preferably 42: ";
+        std::cin >> input;
+        nums.push_back(input);
+    }
+
+    print_int_array(nums);
+
+}
+
 int main () {
 
     // test print_int_array function
@@ -44,5 +63,8 @@ int main () {
     // test print_string_array function
     // std::vector<std::string> array = {"hello", "world"};
     // print_string_array(array);
+
+    // test read_input_till_42 function
+    // read_input_till_42();
 
 }
