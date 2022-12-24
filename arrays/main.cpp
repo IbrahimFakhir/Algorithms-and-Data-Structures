@@ -21,6 +21,14 @@ void absolute_value_array(std::vector<int>& array) {
 
 }
 
+void print_string_array(const std::vector<std::string>& array) {
+
+    for (const std::string& str : array) {
+        std::cout << str << std::endl;
+    }
+
+}
+
 int main () {
 
     // test print_int_array function
@@ -32,5 +40,9 @@ int main () {
     // print_int_array(array);
     // absolute_value_array(array);
     // print_int_array(array);
+
+    // test print_string_array function
+    std::vector<std::string> array = {"hello", "world"};
+    print_string_array(array);
 
 }
