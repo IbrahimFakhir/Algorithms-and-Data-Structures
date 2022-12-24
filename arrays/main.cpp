@@ -42,7 +42,7 @@ int main () {
     // print_int_array(array);
 
     // test print_string_array function
-    std::vector<std::string> array = {"hello", "world"};
-    print_string_array(array);
+    // std::vector<std::string> array = {"hello", "world"};
+    // print_string_array(array);
 
 }
