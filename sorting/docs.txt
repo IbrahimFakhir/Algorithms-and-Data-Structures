@@ -1,0 +1,3 @@
+
+build-command example: 
+    g++ -std=c++17 -I./include src/minsort_inplace.cpp examples/minsort_inplace.cpp -o minsort_inplace
