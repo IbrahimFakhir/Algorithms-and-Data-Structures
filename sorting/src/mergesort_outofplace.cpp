@@ -1,8 +1,14 @@
+/* */
+
 #include <mergesort_outofplace.hpp>
 
-#include <iostream>
+std::vector<int> mergesort_outofplace(const std::vector<int>& array) {
 
-int main() {
+    
+
+}
+
+std::vector<int> merge(const std::vector<int>& links, const std::vector<int>& rechts) {
 
     
 
