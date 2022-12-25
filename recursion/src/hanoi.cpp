@@ -37,3 +37,9 @@ void Hanoi::print_hanoi() {
     }
 
 }
+
+void Hanoi::solve_hanoi_recursively(int from_tower, int help_tower, int to_tower) {
+
+    
+
+}

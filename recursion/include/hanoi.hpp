@@ -15,7 +15,10 @@ class Hanoi {
 
         void print_hanoi();
 
-        void solve_hanoi_recursively(int n, int source, int aux, int dest);
+        void solve_hanoi_recursively(
+            int from_tower = 0, 
+            int help_tower = 1, 
+            int to_tower = 2);
 
     private:
         // declare attributes
