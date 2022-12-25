@@ -1,0 +1,3 @@
+
+build-command example: 
+    g++ -std=c++17 -I./include src/hanoi.cpp examples/hanoi.cpp -o hanoi
