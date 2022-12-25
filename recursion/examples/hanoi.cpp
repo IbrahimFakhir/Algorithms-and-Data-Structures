@@ -4,6 +4,8 @@
 
 int main() {
 
-    
+    Hanoi h(5);
+
+    h.print_hanoi();
 
 }

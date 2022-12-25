@@ -2,13 +2,14 @@
 
 #include <vector>
 #include <cstddef>
+#include <iostream>
 
 class Hanoi {
 
     public:
-        // constructor
+        // declare constructor
         Hanoi(size_t num_of_plates);
-        // memeber functions
+        // declare memeber functions
         bool is_move_valid(size_t from, size_t to);
         void move(size_t from, size_t to);
 
@@ -17,7 +18,7 @@ class Hanoi {
         void solve_hanoi_recursively(int n, int source, int aux, int dest);
 
     private:
-        // attributes
+        // declare attributes
         std::vector<std::vector<size_t>> towers;
 
 };
