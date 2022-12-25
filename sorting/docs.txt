@@ -1,3 +1,6 @@
 
-build-command example: 
+build-command for minsort_inplace:
     g++ -std=c++17 -I./include src/minsort_inplace.cpp examples/minsort_inplace.cpp -o minsort_inplace
+
+build-command for mergesort_outofplace:
+    g++ -std=c++17 -I./include src/mergesort_outofplace.cpp examples/mergesort_outofplace.cpp -o mergesort_outofplace
