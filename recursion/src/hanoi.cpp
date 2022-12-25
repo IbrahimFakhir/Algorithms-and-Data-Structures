@@ -28,6 +28,7 @@ void Hanoi::move(size_t from, size_t to) {
 
 void Hanoi::print_hanoi() {
 
+    std::cout << std::endl;
     for (size_t i = 0; i < 3; i++) {
         std::cout << "Tower " << i << ": ";
         for (size_t j = 0; j < towers[i].size(); j++) {
@@ -38,8 +39,15 @@ void Hanoi::print_hanoi() {
 
 }
 
-void Hanoi::solve_hanoi_recursively(int from_tower, int help_tower, int to_tower) {
+void Hanoi::solve_hanoi_recursively(int n, int from_tower, int help_tower, int to_tower) {
 
-    
+    if (n == 1) {
+        move(from_tower, to_tower);
+        return;
+    }
+
+    solve_hanoi_recursively(n-1, from_tower, to_tower, help_tower);
+    move(from_tower, to_tower);
+    solve_hanoi_recursively(n-1, help_tower, from_tower, to_tower);
 
 }

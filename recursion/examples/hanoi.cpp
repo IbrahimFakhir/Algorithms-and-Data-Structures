@@ -8,4 +8,8 @@ int main() {
 
     h.print_hanoi();
 
+    h.solve_hanoi_recursively(5);
+
+    h.print_hanoi();
+
 }
