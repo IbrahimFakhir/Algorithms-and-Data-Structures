@@ -1,0 +1,3 @@
+
+build-command for directed_graph:
+    g++ -I./include src/directed_graph.cpp examples/directed_graph.cpp -o directed_graph
