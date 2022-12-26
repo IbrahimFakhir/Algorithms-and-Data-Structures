@@ -6,6 +6,8 @@
 
 ## graph folder
 - sheet 6 task 3
+- sheet 7 task 1
+- sheet 7 task 2
 
 ## recursion
 - sheet 5 task 2
