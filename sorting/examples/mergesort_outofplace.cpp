@@ -13,10 +13,8 @@ void print_int_array(const std::vector<int>& array) {
 
 int main() {
 
-    std::vector<int> a = {1, 3, 6, 6};
-    std::vector<int> b = {2, 4, 4, 7, 9, 10};
-    std::vector<int> c = merge(a, b);
-
-    print_int_array(c);
+    std::vector<int> a = {-3, 9, 32, 7};
+    std::vector<int> b = mergesort_outofplace(a);
+    print_int_array(b);
 
 }

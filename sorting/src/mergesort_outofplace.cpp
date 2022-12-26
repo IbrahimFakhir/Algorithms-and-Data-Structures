@@ -2,7 +2,16 @@
 
 std::vector<int>mergesort_outofplace(const std::vector<int>& array) {
 
-    
+    if (array.size() == 1) {
+        return array;
+    }
+
+    int mid = ceil(array.size() / 2.0);
+
+    std::vector<int> left = mergesort_outofplace(std::vector<int>{array.begin(), array.end() - mid});
+    std::vector<int> right = mergesort_outofplace(std::vector<int>{array.begin() + mid - (array.size() % 2), array.end()});
+
+    return merge(left, right);
 
 }
 

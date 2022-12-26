@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <cmath>
 
 std::vector<int> mergesort_outofplace(const std::vector<int>& array);
 
