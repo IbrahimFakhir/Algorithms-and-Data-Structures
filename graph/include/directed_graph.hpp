@@ -11,6 +11,9 @@ class DirectedGraph {
         void add_edge(size_t from_node, size_t to_node);
         void delete_edge(size_t from_node, size_t to_node);
 
+        std::vector<int> breath_first_search(int s);
+        std::vector<int> depth_first_search(int s);
+
         void print_graph();
     
     private:
