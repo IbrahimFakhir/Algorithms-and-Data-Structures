@@ -29,8 +29,11 @@ int main() {
     g.print_graph();
 
     std::vector<int> result = g.breath_first_search(0);
-
     std::cout << std::endl << "result bfs:" << std::endl;
+    print_int_array(result);
+
+    result = g.depth_first_search(0);
+    std::cout << std::endl << "result dfs:" << std::endl;
     print_int_array(result);
 
 }

@@ -1,5 +1,6 @@
 #include <directed_graph.hpp>
 #include <queue>
+#include <stack>
 
 // define constructor
 DirectedGraph::DirectedGraph(size_t num_nodes) {
@@ -38,6 +39,29 @@ std::vector<int> DirectedGraph::breath_first_search(int s) {
         for (int w = 1; w < edges.size(); w++) {
             if (edges[v][w] && !visited[w]) {
                 queue.push(w);
+                visited[w] = true;
+            }
+        }
+        result.push_back(v);
+    }
+
+    return result;
+
+}
+std::vector<int> DirectedGraph::depth_first_search(int s) {
+
+    std::stack<int> stack;
+    std::vector<bool> visited(edges.size(), false);
+    std::vector<int> result;
+
+    stack.push(s);
+
+    while (!stack.empty()) {
+        int v = stack.top();
+        stack.pop();
+        for (int w = 1; w < edges.size(); w++) {
+            if (edges[v][w] && !visited[w]) {
+                stack.push(w);
                 visited[w] = true;
             }
         }
