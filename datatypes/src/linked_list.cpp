@@ -1,5 +1,7 @@
 #include <linked_list.hpp>
 
+#include <iostream>
+
 List::List() {
 
     head = nullptr;
@@ -47,6 +49,21 @@ ListNodeptr List::next(const ListNodeptr& node) {
 ListNodeptr List::get_head() {
 
     return head;
+
+}
+
+void List::print_list() {
+
+    ListNodeptr curr = head;
+
+    std::cout << "HEAD -> ";
+
+    while (curr) {
+        std::cout << curr->get_data() << " -> ";
+        curr = curr->get_next();
+    }
+
+    std::cout << "NULL" << std::endl;
 
 }
 

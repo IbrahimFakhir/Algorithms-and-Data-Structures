@@ -18,6 +18,8 @@ class List {
         ListNodeptr next(const ListNodeptr& node);
 
         ListNodeptr get_head();
+
+        void print_list();
         
     private:
         // declare attributes
