@@ -1,5 +1,57 @@
 #include <linked_list.hpp>
 
+List::List() {
+
+    head = nullptr;
+
+}
+
+void List::insert_front(int x) {
+
+    ListNodeptr new_ptr;
+    new_ptr = std::make_shared<ListNode>(x);
+
+    new_ptr->set_next(head);
+
+    head = new_ptr;
+
+}
+void List::insert_after(const ListNodeptr& node, int x) {
+
+    ListNodeptr new_ptr;
+    new_ptr = std::make_shared<ListNode>(x);
+
+    new_ptr->set_next(node->get_next());
+
+    node->set_next(new_ptr);
+
+}
+
+void List::remove_front() {
+
+    head = head->get_next();
+
+}
+void List::remove_after(const ListNodeptr& node) {
+
+    node->set_next(next(next(node)));
+
+}
+
+ListNodeptr List::next(const ListNodeptr& node) {
+
+    return node->get_next();
+
+}
+
+ListNodeptr List::get_head() {
+
+    return head;
+
+}
+
+
+
 ListNode::ListNode(int new_data) {
 
     data = new_data;
