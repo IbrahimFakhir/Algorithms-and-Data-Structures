@@ -1,2 +1,4 @@
 
-
+build-command for linked_list (choose based on installed compiler):
+    clang++ -I./include src/linked_list.cpp examples/linked_list.cpp -o linked_list
+    g++ -I./include src/linked_list.cpp examples/linked_list.cpp -o linked_list
