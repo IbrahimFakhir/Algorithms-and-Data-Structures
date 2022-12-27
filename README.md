@@ -4,6 +4,9 @@
 ## arrays folder
 - sheet 4 task 2
 
+## datatypes folder
+- sheet 8 task 1
+
 ## graph folder
 - sheet 6 task 3
 - sheet 7 task 1
