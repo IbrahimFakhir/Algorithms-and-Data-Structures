@@ -1,3 +1,4 @@
 
-build-command example: 
+build-command for hanoi (choose based on installed compiler): 
+    clang++ -std=c++17 -I./include src/hanoi.cpp examples/hanoi.cpp -o hanoi
     g++ -std=c++17 -I./include src/hanoi.cpp examples/hanoi.cpp -o hanoi
