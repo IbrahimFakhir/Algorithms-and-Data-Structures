@@ -1,7 +1,7 @@
 
 linux build-command for linked_list (choose based on installed compiler):
-    clang++ -I./include -fsanitizer=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
-    g++ -I./include -fsanitizer=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
+    clang++ -I./include -fsanitize=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
+    g++ -I./include -fsanitize=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
 
 windows build-command for linked_list (choose based on installed compiler):
     clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/linked_list.cpp examples/linked_list.cpp -o linked_list
