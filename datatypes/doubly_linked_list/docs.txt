@@ -1,0 +1,8 @@
+
+linux build-command for doubly_linked_list (choose based on installed compiler):
+    clang++ -I./include -fsanitize=address src/doubly_linked_list.cpp examples/doubly_linked_list.cpp -o doubly_linked_list
+    g++ -I./include -fsanitize=address src/doubly_linked_list.cpp examples/doubly_linked_list.cpp -o doubly_linked_list
+
+windows build-command for doubly_linked_list (choose based on installed compiler):
+    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/doubly_linked_list.cpp examples/doubly_linked_list.cpp -o doubly_linked_list
+    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/doubly_linked_list.cpp examples/doubly_linked_list.cpp -o  doubly_linked_list
