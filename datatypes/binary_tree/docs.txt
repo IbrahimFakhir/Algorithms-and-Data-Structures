@@ -1,3 +1,4 @@
 
 build-command for binary_tree (choose based on installed compiler):
     clang++ -I./include src/binary_tree.cpp examples/binary_tree.cpp -o binary_tree
+    g++ -I./include src/binary_tree.cpp examples/binary_tree.cpp -o binary_tree

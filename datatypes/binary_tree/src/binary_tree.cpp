@@ -13,7 +13,30 @@ TreeNodeptr BinaryTree::get_root() {
 
 }
 
+void BinaryTree::print_binary_tree() {
+    // printing by breath-first-search
 
+    std::queue<TreeNodeptr> q;
+    q.push(root);
+    // print every element of the queue and add its children to queue
+    while (q.size()) {
+        for (int i = 0; i < q.size(); i++) {
+            TreeNodeptr curr = q.front();
+            if (curr) {
+                std::cout << curr->get_data() << ",";
+
+                q.push(curr->get_left_child());
+                q.push(curr->get_right_child());
+            }
+            else {
+                std::cout << "null,";
+            }
+            q.pop();
+        }
+        std::cout << std::endl;
+    }
+
+}
 
 TreeNode::TreeNode(int new_data) {
 
@@ -62,7 +85,7 @@ void TreeNode::set_right_child(int new_data) {
         right_child->set_data(new_data);
     }
     else {
-        // right_child = std::make_shared<TreeNodeptr>(new_data);
+        right_child = std::make_shared<TreeNode>(new_data);
     }
 
 }
