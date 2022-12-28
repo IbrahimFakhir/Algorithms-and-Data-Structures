@@ -4,4 +4,5 @@ linux build-command for binary_tree (choose based on installed compiler):
     g++ -I./include -fsanitize=address src/binary_tree.cpp examples/binary_tree.cpp -o binary_tree
 
 windows build-command for binary_tree (choose based on installed compiler):
-    
+    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/binary_tree.cpp examples/binary_tree.cpp -o binary_tree
+    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/binary_tree.cpp examples/binary_tree.cpp -o binary_tree
