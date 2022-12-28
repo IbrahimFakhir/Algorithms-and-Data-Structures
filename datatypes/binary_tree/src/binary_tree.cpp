@@ -1,6 +1,20 @@
 #include <binary_tree.hpp>
 #include <treenode.hpp>
 
+BinaryTree::BinaryTree(int root_data) {
+
+    root = std::make_shared<TreeNode>(root_data);
+
+}
+
+TreeNodeptr BinaryTree::get_root() {
+
+    return root;
+
+}
+
+
+
 TreeNode::TreeNode(int new_data) {
 
     data = new_data;
