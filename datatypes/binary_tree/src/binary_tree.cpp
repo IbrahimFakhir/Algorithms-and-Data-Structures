@@ -44,7 +44,29 @@ void BinaryTree::postorder(TreeNodeptr root) {
     std::cout << root->get_data() << " ";
 
 }
+void BinaryTree::levelorder() {
 
+    std::queue<TreeNodeptr> queue;  
+
+    queue.push(root);
+
+    while(!queue.empty()) {
+        TreeNodeptr node = queue.front();
+        TreeNodeptr left = node->get_left_child();
+        TreeNodeptr right = node-> get_right_child();
+        
+        if(left != nullptr) {
+            queue.push(left);
+        }
+        if(right != nullptr) {
+            queue.push(right);
+        }
+
+        queue.pop();
+        std::cout << node->get_data() << " ";
+    }
+
+}
 
 
 TreeNode::TreeNode(int new_data) {
