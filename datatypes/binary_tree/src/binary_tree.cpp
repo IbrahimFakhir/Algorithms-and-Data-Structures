@@ -69,6 +69,7 @@ void BinaryTree::levelorder() {
 }
 
 
+
 TreeNode::TreeNode(int new_data) {
 
     data = new_data;

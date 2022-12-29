@@ -8,6 +8,7 @@
 - sheet 8 task 1
 - sheet 8 task 2
 - sheet 9 task 1
+- sheet 9 task 2
 
 ## graph folder
 - sheet 6 task 3
