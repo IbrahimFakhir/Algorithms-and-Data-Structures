@@ -11,7 +11,7 @@ class DoublyLinkedListNode {
         void set_next(const std::shared_ptr<DoublyLinkedListNode>& new_next);
 
         std::weak_ptr<DoublyLinkedListNode> get_prev();
-        void set_prev(const std::weak_ptr<DoublyLinkedListNode>& new_prev);
+        void set_prev(const std::shared_ptr<DoublyLinkedListNode>& new_prev);
 
         int get_data();
         void set_data(int new_data);
