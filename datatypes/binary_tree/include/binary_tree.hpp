@@ -11,8 +11,11 @@ class BinaryTree {
         BinaryTree(int root_data);
 
         TreeNodeptr get_root();
-        
-        void print_binary_tree();
+
+        void preorder(TreeNodeptr root);
+        void inorder(TreeNodeptr root);
+        void postorder(TreeNodeptr root);
+        void levelorder();
 
     private:
         TreeNodeptr root;

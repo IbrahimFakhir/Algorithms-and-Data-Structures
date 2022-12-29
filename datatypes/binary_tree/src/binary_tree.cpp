@@ -13,28 +13,15 @@ TreeNodeptr BinaryTree::get_root() {
 
 }
 
-void BinaryTree::print_binary_tree() {
-    // printing by breath-first-search
+void BinaryTree::inorder(TreeNodeptr root) {
 
-    std::queue<TreeNodeptr> q;
-    q.push(root);
-    // print every element of the queue and add its children to queue
-    while (q.size()) {
-        for (int i = 0; i < q.size(); i++) {
-            TreeNodeptr curr = q.front();
-            if (curr) {
-                std::cout << curr->get_data() << ",";
-
-                q.push(curr->get_left_child());
-                q.push(curr->get_right_child());
-            }
-            else {
-                std::cout << "null,";
-            }
-            q.pop();
-        }
-        std::cout << std::endl;
+    if (!root) {
+        return;
     }
+
+    inorder(root->get_left_child());
+    std::cout << root->get_data() << " ";
+    inorder(root->get_right_child());
 
 }
 

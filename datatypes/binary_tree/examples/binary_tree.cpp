@@ -27,7 +27,6 @@ int main() {
 
     second_right->set_left_child(11);
 
-
-    t.print_binary_tree();
+    t.inorder(root);
 
 }
