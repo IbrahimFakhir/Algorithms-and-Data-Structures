@@ -27,6 +27,11 @@ int main() {
 
     second_right->set_left_child(11);
 
+    std::cout << "\nPreorder:\t";
+    t.preorder(root);
+    std::cout << "\nInorder:\t";
     t.inorder(root);
+    std::cout << "\nPostorder:\t";
+    t.postorder(root);
 
 }

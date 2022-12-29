@@ -13,6 +13,16 @@ TreeNodeptr BinaryTree::get_root() {
 
 }
 
+void BinaryTree::preorder(TreeNodeptr root) {
+
+    if (!root) {
+        return;
+    }
+    std::cout << root->get_data() << " ";
+    preorder(root->get_left_child());
+    preorder(root->get_right_child());
+
+}
 void BinaryTree::inorder(TreeNodeptr root) {
 
     if (!root) {
@@ -22,6 +32,16 @@ void BinaryTree::inorder(TreeNodeptr root) {
     inorder(root->get_left_child());
     std::cout << root->get_data() << " ";
     inorder(root->get_right_child());
+
+}
+void BinaryTree::postorder(TreeNodeptr root) {
+
+    if (!root) {
+        return;
+    }
+    postorder(root->get_left_child());
+    postorder(root->get_right_child());
+    std::cout << root->get_data() << " ";
 
 }
 
