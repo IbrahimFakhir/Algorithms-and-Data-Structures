@@ -1,6 +1,26 @@
 #include <doubly_linked_list.hpp>
 #include <doubly_linked_listnode.hpp>
 
+DoublyLinkedList::DoublyLinkedList() {
+
+    head = nullptr;
+    tail = nullptr;
+
+}
+
+DLinkedListNodeptr DoublyLinkedList::get_first() {
+
+    return head;
+
+}
+DLinkedListNodeptr DoublyLinkedList::get_last() {
+
+    return tail;
+
+}
+
+
+
 DoublyLinkedListNode::DoublyLinkedListNode(int new_data) {
 
     data = new_data;
