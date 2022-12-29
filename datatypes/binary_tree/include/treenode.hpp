@@ -28,7 +28,7 @@ class TreeNode {
         std::shared_ptr<TreeNode> left_child;
         std::shared_ptr<TreeNode> right_child;
 
-        std::shared_ptr<TreeNode> parent;
+        std::weak_ptr<TreeNode> parent;
 
 };
 

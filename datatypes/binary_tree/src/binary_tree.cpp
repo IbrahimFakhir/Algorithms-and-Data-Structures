@@ -38,6 +38,8 @@ void BinaryTree::print_binary_tree() {
 
 }
 
+
+
 TreeNode::TreeNode(int new_data) {
 
     data = new_data;
@@ -98,5 +100,16 @@ void TreeNode::remove_left_child() {
 void TreeNode::remove_right_child() {
 
     right_child = nullptr;
+
+}
+
+TreeNodeptr TreeNode::get_parent() {
+
+    return parent.lock();
+
+}
+void TreeNode::set_parent(const std::shared_ptr<TreeNode>& new_parent) {
+
+    parent = new_parent;
 
 }
