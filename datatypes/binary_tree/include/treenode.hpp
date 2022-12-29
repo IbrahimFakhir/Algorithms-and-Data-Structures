@@ -33,3 +33,4 @@ class TreeNode {
 };
 
 typedef std::shared_ptr<TreeNode> TreeNodeptr;
+typedef std::weak_ptr<TreeNode> WeakTreeNodeptr;
