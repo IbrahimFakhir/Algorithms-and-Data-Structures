@@ -19,11 +19,16 @@ class TreeNode {
         void remove_left_child();
         void remove_right_child();
 
+        std::shared_ptr<TreeNode> get_parent();
+        void set_parent(const std::shared_ptr<TreeNode>& new_parent);
+
     private:
+        int data;
+
         std::shared_ptr<TreeNode> left_child;
         std::shared_ptr<TreeNode> right_child;
 
-        int data;
+        std::shared_ptr<TreeNode> parent;
 
 };
 
