@@ -14,6 +14,6 @@ int main() {
     l.remove_front();
     l.remove_after(l.get_head());
 
-    l.print_list();
+    l.print_linked_list();
 
 }
