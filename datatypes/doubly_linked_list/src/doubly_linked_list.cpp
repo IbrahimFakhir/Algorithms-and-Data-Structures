@@ -90,6 +90,21 @@ WeakDLinkedListNodeptr DoublyLinkedList::get_prev(const DLinkedListNodeptr& node
 
 }
 
+void DoublyLinkedList::print_doubly_linked_list() {
+
+    DLinkedListNodeptr curr = head;
+
+    std::cout << "Head -> ";
+
+    while (curr->get_next()) {
+        std::cout << curr->get_data() << " -> ";
+        curr = curr->get_next();
+    }
+    std::cout << curr->get_data();
+    std::cout << " <- Tail" << std::endl << std::endl;
+
+}
+
 
 
 DoublyLinkedListNode::DoublyLinkedListNode(int new_data) {
