@@ -79,6 +79,17 @@ void DoublyLinkedList::remove(const DLinkedListNodeptr& node) {
 
 }
 
+DLinkedListNodeptr DoublyLinkedList::get_next(const DLinkedListNodeptr& node) {
+
+    return node->get_next();
+
+}
+WeakDLinkedListNodeptr DoublyLinkedList::get_prev(const DLinkedListNodeptr& node) {
+
+    return node->get_prev();
+
+}
+
 
 
 DoublyLinkedListNode::DoublyLinkedListNode(int new_data) {
