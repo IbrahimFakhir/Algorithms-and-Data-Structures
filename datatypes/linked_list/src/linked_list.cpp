@@ -53,7 +53,7 @@ ListNodeptr List::get_head() {
 
 }
 
-void List::print_list() {
+void List::print_linked_list() {
 
     ListNodeptr curr = head;
 

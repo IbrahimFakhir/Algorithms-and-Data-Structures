@@ -20,7 +20,7 @@ class List {
 
         ListNodeptr get_head();
 
-        void print_list();
+        void print_linked_list();
         
     private:
         // declare attributes

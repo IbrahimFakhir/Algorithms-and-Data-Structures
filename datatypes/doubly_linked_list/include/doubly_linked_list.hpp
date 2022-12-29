@@ -19,6 +19,8 @@ class DoublyLinkedList {
         DLinkedListNodeptr get_next(const DLinkedListNodeptr& node);
         WeakDLinkedListNodeptr get_prev(const DLinkedListNodeptr& node);
 
+        void print_doubly_linked_list();
+
     private:
         DLinkedListNodeptr head;
         DLinkedListNodeptr tail;
