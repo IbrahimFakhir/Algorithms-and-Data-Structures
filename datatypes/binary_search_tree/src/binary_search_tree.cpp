@@ -13,6 +13,35 @@ TreeNodeptr BinarySearchTree::get_root() {
 
 }
 
+void BinarySearchTree::insert_value(TreeNodeptr tree, int data) {
+    // 1. case: tree is empty
+    if (!tree) {
+        tree->set_data(data);
+        return;
+    }
+    // 2. case: given number is smaller than root of current tree
+    if (data < tree->get_data()) {
+        if (!tree->get_left_child()) {
+            tree->set_left_child(data);
+        }
+        else {
+            insert_value(tree->get_left_child(), data);
+        }
+    }
+    // 3. case: given number is larger than root of current tree
+    if (data > tree->get_data()) {
+        if (!tree->get_right_child()) {
+            tree->set_right_child(data);
+        }
+        else {
+            insert_value(tree->get_right_child(), data);
+        }
+    }
+
+
+
+}
+
 void BinarySearchTree::preorder(TreeNodeptr root) {
 
     if (!root) {

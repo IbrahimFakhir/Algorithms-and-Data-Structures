@@ -11,8 +11,8 @@ class BinarySearchTree {
         BinarySearchTree(int root_data);
 
         TreeNodeptr get_root();
-
-        void insert_node(int data);
+        // maybe call by reference?
+        void insert_value(TreeNodeptr tree, int data);
         void delete_node(TreeNodeptr node);
 
         void preorder(TreeNodeptr root);
