@@ -1,7 +1,72 @@
 #include <binary_search_tree.hpp>
 #include <treenode.hpp>
 
+BinarySearchTree::BinarySearchTree(int root_data) {
 
+    root = std::make_shared<TreeNode>(root_data);
+
+}
+
+TreeNodeptr BinarySearchTree::get_root() {
+
+    return root;
+
+}
+
+void BinarySearchTree::preorder(TreeNodeptr root) {
+
+    if (!root) {
+        return;
+    }
+    std::cout << root->get_data() << " ";
+    preorder(root->get_left_child());
+    preorder(root->get_right_child());
+
+}
+void BinarySearchTree::inorder(TreeNodeptr root) {
+
+    if (!root) {
+        return;
+    }
+
+    inorder(root->get_left_child());
+    std::cout << root->get_data() << " ";
+    inorder(root->get_right_child());
+
+}
+void BinarySearchTree::postorder(TreeNodeptr root) {
+
+    if (!root) {
+        return;
+    }
+    postorder(root->get_left_child());
+    postorder(root->get_right_child());
+    std::cout << root->get_data() << " ";
+
+}
+void BinarySearchTree::levelorder() {
+
+    std::queue<TreeNodeptr> queue;  
+
+    queue.push(root);
+
+    while(!queue.empty()) {
+        TreeNodeptr node = queue.front();
+        TreeNodeptr left = node->get_left_child();
+        TreeNodeptr right = node-> get_right_child();
+        
+        if(left != nullptr) {
+            queue.push(left);
+        }
+        if(right != nullptr) {
+            queue.push(right);
+        }
+
+        queue.pop();
+        std::cout << node->get_data() << " ";
+    }
+
+}
 
 
 
