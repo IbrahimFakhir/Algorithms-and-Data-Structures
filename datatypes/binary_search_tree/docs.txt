@@ -1,0 +1,8 @@
+
+linux build-command for binary_search_tree (choose based on installed compiler):
+    clang++ -I./include -fsanitize=address src/binary_search_tree.cpp examples/binary_search_tree.cpp -o binary_search_tree
+    g++ -I./include -fsanitize=address src/binary_search_tree.cpp examples/binary_search_tree.cpp -o binary_search_tree
+
+windows build-command for binary_search_tree (choose based on installed compiler):
+    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/binary_search_tree.cpp examples/binary_search_tree.cpp -o binary_search_tree
+    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/binary_search_tree.cpp examples/binary_search_tree.cpp -o binary_search_tree
