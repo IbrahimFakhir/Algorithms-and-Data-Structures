@@ -10,7 +10,7 @@ List::List() {
 
 }
 
-void List::insert_front(int x) {
+void List::insert_front(std::string x) {
 
     ListNodeptr new_ptr;
     new_ptr = std::make_shared<ListNode>(x);
@@ -21,7 +21,7 @@ void List::insert_front(int x) {
     size++;
 
 }
-void List::insert_after(const ListNodeptr& node, int x) {
+void List::insert_after(const ListNodeptr& node, std::string x) {
 
     ListNodeptr new_ptr;
     new_ptr = std::make_shared<ListNode>(x);

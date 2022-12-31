@@ -1,6 +1,7 @@
 #pragma once
 
 #include <list_node.hpp>
+#include <string>
 #include <memory>
 
 class List {
@@ -10,8 +11,8 @@ class List {
         List();
 
         // declare member functions
-        void insert_front(int x);
-        void insert_after(const ListNodeptr& node, int x);
+        void insert_front(std::string x);
+        void insert_after(const ListNodeptr& node, std::string x);
 
         void remove_front();
         void remove_after(const ListNodeptr& node);
