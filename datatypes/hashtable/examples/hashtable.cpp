@@ -5,7 +5,8 @@
 int main() {
 
     Hashtable h = Hashtable();
+    std::cout << "Size: " << h.get_size() << std::endl;
 
-    std::cout << h.get_size();
+    h.print_hashtable();
     
 }
