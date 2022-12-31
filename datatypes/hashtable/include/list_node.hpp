@@ -7,7 +7,7 @@ class ListNode {
 
     public:
         // declare constructor
-        ListNode(std::string data);
+        ListNode(std::string new_data);
 
         // declare member functions
         std::string get_data();
