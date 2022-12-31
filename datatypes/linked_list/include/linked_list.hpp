@@ -20,10 +20,13 @@ class List {
 
         ListNodeptr get_head();
 
+        size_t get_size();
+
         void print_linked_list();
         
     private:
         // declare attributes
         ListNodeptr head;
+        size_t size;
 
 };

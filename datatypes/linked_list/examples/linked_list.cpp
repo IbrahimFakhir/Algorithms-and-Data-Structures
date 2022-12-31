@@ -14,6 +14,8 @@ int main() {
     l.remove_front();
     l.remove_after(l.get_head());
 
+    std::cout << "size: " << l.get_size() << std::endl;
+
     l.print_linked_list();
 
 }
