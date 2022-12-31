@@ -8,10 +8,10 @@ windows build-command for hashtable (choose based on installed compiler):
     g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/hashtable.cpp examples/hashtable.cpp -o hashtable
 
 
-linux build-command for linked_list (choose based on installed compiler):
-    clang++ -I./include -fsanitize=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
-    g++ -I./include -fsanitize=address src/linked_list.cpp examples/linked_list.cpp -o linked_list
+linux build-command for linked_list_str (choose based on installed compiler):
+    clang++ -I./include -fsanitize=address src/linked_list_str.cpp examples/linked_list_str.cpp -o linked_list_str
+    g++ -I./include -fsanitize=address src/linked_list_str.cpp examples/linked_list_str.cpp -o linked_list_str
 
-windows build-command for linked_list (choose based on installed compiler):
-    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/linked_list.cpp examples/linked_list.cpp -o linked_list
-    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/linked_list.cpp examples/linked_list.cpp -o linked_list
+windows build-command for linked_list_str (choose based on installed compiler):
+    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/linked_list_str.cpp examples/linked_list_str.cpp -o linked_list_str
+    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/linked_list_str.cpp examples/linked_list_str.cpp -o linked_list_str
