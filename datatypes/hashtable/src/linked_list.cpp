@@ -83,19 +83,19 @@ void List::print_linked_list() {
 
 
 
-ListNode::ListNode(int new_data) {
+ListNode::ListNode(std::string data) {
 
-    data = new_data;
+    data = data;
     next = nullptr;
     
 }
 
-int ListNode::get_data() {
+std::string ListNode::get_data() {
 
     return data;
 
 }
-void ListNode::set_data(int new_data) {
+void ListNode::set_data(std::string new_data) {
 
     data = new_data;
     
