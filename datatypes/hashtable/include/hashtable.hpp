@@ -24,8 +24,7 @@ class Hashtable {
     private:
         const std::function<size_t(const std::string&)> hash_function;
 
-        std::vector<List> buckets;
-
         size_t num_buckets;
+        std::vector<List> buckets; 
 
 };
