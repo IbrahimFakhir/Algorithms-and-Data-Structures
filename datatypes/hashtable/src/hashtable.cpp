@@ -9,13 +9,13 @@ Hashtable::Hashtable() :
 
 }
 
-void Hashtable::insert(std::string x) {
+void Hashtable::insert(const std::string x) {
 
     buckets[hash_function(x) % num_buckets].insert_front(x);
 
 }
 
-void Hashtable::remove(std::string& x) {
+void Hashtable::remove(const std::string& x) {
 
     size_t index = hash_function(x) % num_buckets;
 

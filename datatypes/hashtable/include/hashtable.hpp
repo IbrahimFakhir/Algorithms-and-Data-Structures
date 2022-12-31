@@ -12,8 +12,8 @@ class Hashtable {
     public:
         Hashtable();
 
-        void insert(std::string x);
-        void remove(std::string& x);
+        void insert(const std::string x);
+        void remove(const std::string& x);
 
         bool is_in_table(const std::string& x);
 
