@@ -1,0 +1,8 @@
+
+linux build-command for hashtable (choose based on installed compiler):
+    clang++ -I./include -fsanitize=address src/hashtable.cpp examples/hashtable.cpp -o hashtable
+    g++ -I./include -fsanitize=address src/hashtable.cpp examples/hashtable.cpp -o hashtable
+
+windows build-command for hashtable (choose based on installed compiler):
+    clang++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/hashtable.cpp examples/hashtable.cpp -o hashtable
+    g++ -std=c++17 -I./include -I./external -fsanitize=undefined -fsanitize-undefined-trap-on-error src/hashtable.cpp examples/hashtable.cpp -o hashtable
