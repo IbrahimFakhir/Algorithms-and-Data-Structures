@@ -15,7 +15,7 @@ class List {
 
         void remove_front();
         void remove_after(const ListNodeptr& node);
-        // alternative to using next func: node->get_next()
+        
         ListNodeptr next(const ListNodeptr& node);
 
         ListNodeptr get_head();
