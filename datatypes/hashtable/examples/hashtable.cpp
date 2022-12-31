@@ -19,4 +19,7 @@ int main() {
 
     h.print_hashtable();
     
+    std::cout << h.is_in_table("Eren") << std::endl;
+    std::cout << h.is_in_table("Ibo") << std::endl;
+
 }
