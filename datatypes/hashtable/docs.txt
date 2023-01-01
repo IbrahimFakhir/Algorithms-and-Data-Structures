@@ -1,6 +1,6 @@
 
 linux build-command for hashtable (choose based on installed compiler):
-    clang++ -I./include -fsanitize=address src/hashtable.cpp src/linked_list_str.cpp src/linked_list_str.cpp examples/hashtable.cpp -o hashtable
+    clang++ -I./include -fsanitize=address src/hashtable.cpp src/linked_list_str.cpp examples/hashtable.cpp -o hashtable
     g++ -I./include -fsanitize=address src/hashtable.cpp src/linked_list_str.cpp examples/hashtable.cpp -o hashtable
 
 windows build-command for hashtable (choose based on installed compiler):
