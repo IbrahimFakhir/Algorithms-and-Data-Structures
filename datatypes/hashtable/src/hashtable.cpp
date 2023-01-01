@@ -1,10 +1,13 @@
 #include <hashtable.hpp>
 #include <iostream>
 
-Hashtable::Hashtable() :
-    hash_function(std::hash<std::string>()) {
+Hashtable::Hashtable(std::function<size_t(const std::string&)> new_hash_function) {
 
+    hash_function = new_hash_function;
+    
+    num_elements = 0;
     num_buckets = 32;
+    
     buckets = std::vector<List>(32);
 
 }
@@ -62,7 +65,13 @@ void Hashtable::print_hashtable() {
 
 }
 
-size_t Hashtable::get_size() {
+size_t Hashtable::get_num_elements() {
+
+    return num_elements;
+
+}
+
+size_t Hashtable::get_num_buckets() {
 
     return num_buckets;
 

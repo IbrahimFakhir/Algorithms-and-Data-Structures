@@ -10,7 +10,7 @@
 class Hashtable {
 
     public:
-        Hashtable();
+        Hashtable(std::function<size_t(const std::string&)> hash_function);
 
         void insert(const std::string x);
         void remove(const std::string& x);
@@ -19,12 +19,15 @@ class Hashtable {
 
         void print_hashtable();
 
-        size_t get_size();
+        size_t get_num_elements();
+        size_t get_num_buckets();
 
     private:
-        const std::function<size_t(const std::string&)> hash_function;
+        std::function<size_t(const std::string&)> hash_function;
 
+        size_t num_elements;
         size_t num_buckets;
-        std::vector<List> buckets; 
+
+        std::vector<List> buckets;
 
 };
