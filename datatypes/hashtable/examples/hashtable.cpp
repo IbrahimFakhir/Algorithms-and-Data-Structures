@@ -13,6 +13,11 @@ int main() {
     h.insert("g");
     h.insert("g");
     h.insert("g");
+    h.insert("g");
+    h.insert("g");
+    h.insert("g");
+    h.insert("g");
+    h.insert("g");
 
 
     h.print_hashtable();

@@ -17,8 +17,7 @@ void Hashtable::insert(const std::string x) {
     bool load_factor_valid = double(num_elements) / double(num_buckets) < 0.75;
     
     if (!load_factor_valid) {
-        num_buckets = 2*num_buckets;
-        rearrange_elements();
+        rearrange_elements(2);
     }
 
     buckets[hash_function(x) % num_buckets].insert_front(x);
@@ -27,7 +26,7 @@ void Hashtable::insert(const std::string x) {
 }
 
 void Hashtable::remove(const std::string& x) {
-
+    
     size_t index = hash_function(x) % num_buckets;
 
     ListNodeptr curr = buckets[index].get_head();
@@ -43,6 +42,14 @@ void Hashtable::remove(const std::string& x) {
             buckets[index].remove_front();
             return;
         }
+    }
+
+    num_elements --;
+
+    bool load_factor_valid = double(num_elements) / double(num_buckets) > 0.25;
+    
+    if (!load_factor_valid) {
+        rearrange_elements(0.5);
     }
 
 }
@@ -64,7 +71,7 @@ bool Hashtable::is_in_table(const std::string& x) {
 
 }
 
-void Hashtable::rearrange_elements() {
+void Hashtable::rearrange_elements(double factor) {
     
     List tmp = List();
 
@@ -76,6 +83,8 @@ void Hashtable::rearrange_elements() {
             num_elements --;
         }
     }
+    
+    num_buckets = factor*num_buckets;
 
     // throw elements back into hashmap
     while (tmp.get_head()) {
