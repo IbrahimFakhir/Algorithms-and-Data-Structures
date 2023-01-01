@@ -14,10 +14,12 @@ Hashtable::Hashtable(std::function<size_t(const std::string&)> new_hash_function
 
 void Hashtable::insert(const std::string x) {
     
+    // rearrange if load_factor invalid
     if (!(double(num_elements) / double(num_buckets) < 0.75)) {
         rearrange_elements(2);
     }
 
+    // insert element
     buckets[hash_function(x) % num_buckets].insert_front(x);
     num_elements++;
 
@@ -41,7 +43,7 @@ void Hashtable::remove(const std::string& x) {
     }
     num_elements --;
 
-    // rearrange if loead_factor invalid, maybe before?
+    // rearrange if load_factor invalid, maybe before?
     if (!(double(num_elements) / double(num_buckets) > 0.25)) {
         rearrange_elements(0.5);
     }
