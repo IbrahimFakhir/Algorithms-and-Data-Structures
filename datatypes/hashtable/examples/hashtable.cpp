@@ -9,15 +9,8 @@ int main() {
     h.insert("d");
     h.insert("e");
     h.insert("g");
-    h.insert("dasg");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
-    h.insert("g");
+
+    h.remove("g");
 
 
     h.print_hashtable();

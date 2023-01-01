@@ -13,10 +13,8 @@ Hashtable::Hashtable(std::function<size_t(const std::string&)> new_hash_function
 }
 
 void Hashtable::insert(const std::string x) {
-
-    bool load_factor_valid = double(num_elements) / double(num_buckets) < 0.75;
     
-    if (!load_factor_valid) {
+    if (!(double(num_elements) / double(num_buckets) < 0.75)) {
         rearrange_elements(2);
     }
 
@@ -27,15 +25,13 @@ void Hashtable::insert(const std::string x) {
 
 void Hashtable::remove(const std::string& x) {
     
+    // remove element
     size_t index = hash_function(x) % num_buckets;
-
-    ListNodeptr curr = buckets[index].get_head();
-    
+    ListNodeptr curr = buckets[index].get_head(); 
     if (curr && x == curr->get_data()) {
         buckets[index].remove_front();
         return;
-    }
-    
+    }  
     while (curr->get_next()) {
         curr = curr->get_next();
         if (x == curr->get_data()) {
@@ -43,12 +39,10 @@ void Hashtable::remove(const std::string& x) {
             return;
         }
     }
-
     num_elements --;
 
-    bool load_factor_valid = double(num_elements) / double(num_buckets) > 0.25;
-    
-    if (!load_factor_valid) {
+    // rearrange if loead_factor invalid, maybe before?
+    if (!(double(num_elements) / double(num_buckets) > 0.25)) {
         rearrange_elements(0.5);
     }
 
