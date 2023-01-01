@@ -6,7 +6,7 @@ Hashtable::Hashtable(std::function<size_t(const std::string&)> new_hash_function
     hash_function = new_hash_function;
     
     num_elements = 0;
-    num_buckets = 32;
+    num_buckets = 1;
     
     buckets = std::vector<List>(32);
 
@@ -14,7 +14,15 @@ Hashtable::Hashtable(std::function<size_t(const std::string&)> new_hash_function
 
 void Hashtable::insert(const std::string x) {
 
+    bool load_factor_valid = double(num_elements) / double(num_buckets) < 0.75;
+    
+    if (!load_factor_valid) {
+        num_buckets = 2*num_buckets;
+        rearrange_elements();
+    }
+
     buckets[hash_function(x) % num_buckets].insert_front(x);
+    num_elements++;
 
 }
 
@@ -53,6 +61,30 @@ bool Hashtable::is_in_table(const std::string& x) {
     }
 
     return false;
+
+}
+
+void Hashtable::rearrange_elements() {
+    
+    List tmp = List();
+
+    // remove all elements and store in tmp
+    for (int i = 0; i < num_buckets; i++) {
+        while (buckets[i].get_head()) {
+            tmp.insert_front(buckets[i].get_head()->get_data());
+            buckets[i].remove_front();
+            num_elements --;
+        }
+    }
+
+    // throw elements back into hashmap
+    while (tmp.get_head()) {
+        std::string x = tmp.get_head()->get_data();
+        
+        tmp.remove_front();
+
+        insert(x);
+    }
 
 }
 

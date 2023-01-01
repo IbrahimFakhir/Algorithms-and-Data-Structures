@@ -16,6 +16,8 @@ class Hashtable {
         void remove(const std::string& x);
 
         bool is_in_table(const std::string& x);
+        // used to balance hashtable based on load factor, make private after testing
+        void rearrange_elements();
 
         void print_hashtable();
 
