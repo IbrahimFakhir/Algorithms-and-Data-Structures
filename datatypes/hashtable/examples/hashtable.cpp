@@ -12,8 +12,6 @@ int main() {
 
     h.remove("g");
 
-
     h.print_hashtable();
-    std::cout << "Size: " << h.get_num_buckets() << std::endl;
 
 }

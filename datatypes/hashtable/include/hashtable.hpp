@@ -16,8 +16,6 @@ class Hashtable {
         void remove(const std::string& x);
 
         bool is_in_table(const std::string& x);
-        // used to balance hashtable based on load factor, make private after testing
-        void rearrange_elements(double factor);
 
         void print_hashtable();
 
@@ -31,5 +29,11 @@ class Hashtable {
         size_t num_buckets;
 
         std::vector<List> buckets;
+        /* 
+        * helper function for insert and remove functions
+        *
+        * @param factor the factor by which the number of buckets will be multiplied during rearrangement 
+        */
+        void rearrange_elements(double factor);
 
 };
