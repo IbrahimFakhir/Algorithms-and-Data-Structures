@@ -11,6 +11,9 @@ int main() {
     h.insert("g");
 
     h.remove("g");
+    
+    std::cout << "is letter e in table? " << h.is_in_table("e") << std::endl;
+    std::cout << "is letter g in table? " << h.is_in_table("g") << std::endl;
 
     h.print_hashtable();
 
