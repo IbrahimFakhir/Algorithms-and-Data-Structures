@@ -1,6 +1,7 @@
 #include <student.hpp>
 
 #include <iostream>
+#include <algorithm>
 
 int main() {
 
@@ -20,6 +21,14 @@ int main() {
     Student s14("Bril", "Long", 15, 7, 2003, 154);
     Student s15("Giannes", "Kump", 3, 2, 1985, 191);
     Student s16("Marcel", "Pois", 6, 5, 1992, 189);
-    std::vector<Student> Students = {s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16};
+    std::vector<Student> students = {s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16};
+
+    // sort by first_name
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "sorted by first name:" << "\n\n";
+    std::sort(students.begin(), students.end(), [](Student s1, Student s2){return s1.get_first_name() < s2.get_first_name();});
+    for (const Student& s : students) {
+        std::cout << s.get_first_name() << std::endl;
+    }
 
 }
