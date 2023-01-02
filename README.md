@@ -10,6 +10,7 @@
 - sheet 9 task 1
 - sheet 9 task 2
 - sheet 10 task 2
+- sheet 11 task 1
 
 ## graph folder
 - sheet 6 task 3
@@ -23,3 +24,6 @@
 ## sorting folder
 - sheet 5 task 1
 - sheet 6 task 1
+
+## studi folder
+- sheet 11 task 3
