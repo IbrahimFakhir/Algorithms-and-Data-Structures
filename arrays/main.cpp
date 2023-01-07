@@ -67,4 +67,6 @@ int main () {
     // test read_input_till_42 function
     // read_input_till_42();
 
+    std::cout << "yo";
+
 }
