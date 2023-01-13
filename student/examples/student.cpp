@@ -2,6 +2,11 @@
 
 #include <iostream>
 #include <algorithm>
+#include <set>
+#include <map>
+
+typedef std::set<Student, StudentCmp> StudentSet;
+typedef std::map<Student, StudentSet, StudentCmp> CanteenMap;
 
 int main() {
 
@@ -31,9 +36,32 @@ int main() {
         std::cout << s.get_first_name() << std::endl;
     }*/
 
-    Student d1(123, "Eren", "Akdag", 2003, 12, 15, 178);
-    Student d2(456, "Eren", "Akdag", 2003, 12, 15, 178);
+    
+    Student alex(111, "Alex", "Akdag", 2003, 12, 15, 178);
+    Student tobi(222, "Tobi", "Akdag", 2003, 12, 15, 178);
+    Student pascal(333, "Pascal", "Akdag", 2003, 12, 15, 178);
+    Student lisa(444, "Lisa", "Akdag", 2003, 12, 15, 178);
+    Student frauke(555, "Frauke", "Akdag", 2003, 12, 15, 178);
+    Student fatma(666, "Fatma", "Akdag", 2003, 12, 15, 178);
+    
+    StudentSet alex_pref;
+    alex_pref.insert(tobi);
+    alex_pref.insert(pascal);
+    alex_pref.insert(lisa);
 
-    std::cout << (d1 > d2);
+    StudentSet frauke_pref;
+    frauke_pref.insert(tobi);
+    frauke_pref.insert(alex);
+    frauke_pref.insert(fatma);
+
+    StudentSet lisa_pref;
+    lisa_pref.insert(frauke);
+    lisa_pref.insert(alex);
+
+    CanteenMap preferences;
+    // inserting keys implicitly
+    preferences[alex] = alex_pref;
+    preferences[frauke] = frauke_pref;
+    preferences[lisa] = lisa_pref;
 
 }
