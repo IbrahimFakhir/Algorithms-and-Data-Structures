@@ -144,3 +144,21 @@ EdgeSet DirectedGraph::get_incoming_edges(const index_t& idx) const {
     return get_incoming_edges(Node(idx));
 
 }
+
+
+void DirectedGraph::print_graph() const {
+
+    std::cout << "Nodes:\n\t";
+    for (const auto& n : node_set) {
+        std::cout << n.get_string() << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "Edges:\n\t";
+    for (const auto& e : edge_set) {
+        std::cout << e.get_string() << " ";
+    }
+
+    std::cout << std::endl;
+
+}
