@@ -1,4 +1,4 @@
-#include <directed_graph.hpp>
+#include <simple_directed_graph.hpp>
 
 #include <iostream>
 
