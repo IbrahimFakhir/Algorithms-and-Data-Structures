@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstddef>
 
 class Student {
 
@@ -24,7 +25,6 @@ class Student {
 
         void print_student() const;
 
-        // getter and setter functions
         std::string get_first_name() const;
         void set_first_name(std::string first_name);
         std::string get_last_name() const;
