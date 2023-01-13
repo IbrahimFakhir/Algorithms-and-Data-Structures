@@ -65,7 +65,7 @@ int main() {
     preferences[lisa] = lisa_pref;
 
     for (const auto& key: preferences) {
-        std::cout << "Key: \t| " << key.first.get_first_name() << " |\nPref:\t| ";
+        std::cout << "Key: \t| " << key.first.get_first_name() << " |\nValue:\t| ";
         for (const auto& value: key.second) {
             std::cout << value.get_first_name() << " | ";
         }
