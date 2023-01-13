@@ -24,3 +24,12 @@ class EdgeHash {
 
 };
 typedef std::unordered_set<Edge, EdgeHash> EdgeSet;
+
+class DirectedGraph {
+
+    public:
+        DirectedGraph();
+
+        
+
+};
