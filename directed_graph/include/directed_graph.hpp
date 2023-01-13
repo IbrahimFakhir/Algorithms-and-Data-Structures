@@ -41,9 +41,8 @@ class DirectedGraph {
 
         const NodeSet& get_node_set() const;
 
-        // add existing edge
+
         void insert_edge(const Edge& e);
-        // create and add edge
         void insert_edge(const index_t& start, const index_t& end);
 
         void delete_edge(const Edge& e);
@@ -51,6 +50,19 @@ class DirectedGraph {
 
         bool exists_edge(const Edge& e) const;
         bool exists_edge(const index_t& start, const index_t& end) const;
+
+
+        EdgeSet get_outgoing_edged(const Node& n) const;
+        EdgeSet get_outgoing_edges(const size_t& idx) const;
+
+        EdgeSet get_incoming_edges(const Node& n) const;
+        EdgeSet get_incoming_edges(const index_t& idx) const;
+
+
+        void print_graph() const;
+
+        std::vector<Node> breath_first_search(const Node& start) const;
+        std::vector<Node> depth_first_search(const Node& start) const;
 
     private:
         NodeSet node_set;
