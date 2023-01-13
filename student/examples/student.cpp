@@ -5,7 +5,7 @@
 
 int main() {
 
-    Student s1("Eren", "Akdag", 27, 7, 2002, 178);
+    /*Student s1("Eren", "Akdag", 27, 7, 2002, 178);
     Student s2("Margaret ", "Akdag", 24, 4, 1959, 162);
     Student s3("Amy", "Roberts", 4, 6, 1954, 171);
     Student s4("Lucas", "Dahmer", 28, 9, 2001, 165);
@@ -29,6 +29,6 @@ int main() {
     std::sort(students.begin(), students.end(), [](Student s1, Student s2){return s1.get_first_name() < s2.get_first_name();});
     for (const Student& s : students) {
         std::cout << s.get_first_name() << std::endl;
-    }
+    }*/
 
 }

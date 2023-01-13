@@ -1,6 +1,7 @@
 #include <student.hpp>
 
 Student::Student(
+        size_t student_id,
         std::string first_name,
         std::string last_name,
         int birth_year,
@@ -9,14 +10,35 @@ Student::Student(
         double height,
         std::vector<std::string> interests) {
     
+    this->student_id = student_id;
     this->first_name = first_name;
     this->last_name = last_name;
     this->birth_year = birth_year;
     this->birth_month = birth_month;
     this->birth_day = birth_day;
     this->height = height;
-
     this->interests = interests;
+
+}
+
+bool Student::operator<(const Student& other) const {
+
+    return this->student_id < other.get_student_id();
+
+}
+bool Student::operator>(const Student& other) const {
+
+    return this->student_id > other.get_student_id();
+
+}
+bool Student::operator==(const Student& other) const {
+
+    return this->student_id == other.get_student_id();
+
+}
+bool Student::operator!=(const Student& other) const {
+
+    return this->student_id != other.get_student_id();
 
 }
 
@@ -63,6 +85,11 @@ void Student::print_student() const {
 
 }
 
+size_t Student::get_student_id() const {
+
+    return student_id;
+
+}
 std::string Student::get_first_name() const {
 
     return first_name;
@@ -83,7 +110,6 @@ void Student::set_last_name(std::string last_name) {
     this->last_name = last_name;
 
 }
-
 int Student::get_birth_year() const {
 
     return birth_year;
@@ -114,7 +140,6 @@ void Student::set_birth_day(int birth_day) {
     this->birth_day = birth_day;
 
 }
-
 double Student::get_height() const {
 
     return height;
@@ -125,7 +150,6 @@ void Student::set_height(double height) {
     this->height = height;
 
 }
-
 std::vector<std::string> Student::get_interests() const {
 
     return interests;
