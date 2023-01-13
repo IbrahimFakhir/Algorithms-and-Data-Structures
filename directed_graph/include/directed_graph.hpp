@@ -25,6 +25,9 @@ class EdgeHash {
 };
 typedef std::unordered_set<Edge, EdgeHash> EdgeSet;
 
+typedef std::unordered_map<Node, EdgeSet, NodeHash> OutgoingEdges;
+typedef std::unordered_map<Node, EdgeSet, NodeHash> IncomingEdges;
+
 class DirectedGraph {
 
     public:
@@ -37,7 +40,7 @@ class DirectedGraph {
         void delete_node(const index_t& idx);
 
         bool exists_node(const Node& n) const;
-        bool exists_node(const index_t& idc) const;
+        bool exists_node(const index_t& idx) const;
 
         const NodeSet& get_node_set() const;
 
@@ -52,20 +55,22 @@ class DirectedGraph {
         bool exists_edge(const index_t& start, const index_t& end) const;
 
 
-        EdgeSet get_outgoing_edged(const Node& n) const;
-        EdgeSet get_outgoing_edges(const size_t& idx) const;
+        EdgeSet get_outgoing_edges(const Node& n) const;
+        EdgeSet get_outgoing_edges(const index_t& idx) const;
 
         EdgeSet get_incoming_edges(const Node& n) const;
         EdgeSet get_incoming_edges(const index_t& idx) const;
 
 
         void print_graph() const;
-
         std::vector<Node> breath_first_search(const Node& start) const;
         std::vector<Node> depth_first_search(const Node& start) const;
 
     private:
         NodeSet node_set;
         EdgeSet edge_set;
+
+        OutgoingEdges outgoing_edges;
+        IncomingEdges incoming_edges;
 
 };
