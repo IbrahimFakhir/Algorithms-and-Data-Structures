@@ -64,4 +64,12 @@ int main() {
     preferences[frauke] = frauke_pref;
     preferences[lisa] = lisa_pref;
 
+    for (const auto& key: preferences) {
+        std::cout << "Key: \t| " << key.first.get_first_name() << " |\nPref:\t| ";
+        for (const auto& value: key.second) {
+            std::cout << value.get_first_name() << " | ";
+        }
+        std::cout << std::endl << std::endl;
+    }
+
 }
