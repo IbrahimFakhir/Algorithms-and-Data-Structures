@@ -31,4 +31,9 @@ int main() {
         std::cout << s.get_first_name() << std::endl;
     }*/
 
+    Student d1(123, "Eren", "Akdag", 2003, 12, 15, 178);
+    Student d2(456, "Eren", "Akdag", 2003, 12, 15, 178);
+
+    std::cout << (d1 > d2);
+
 }

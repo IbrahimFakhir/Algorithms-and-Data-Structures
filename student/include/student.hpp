@@ -57,3 +57,12 @@ class Student {
         std::vector<std::string> interests;
 
 };
+
+class StudentCmp {
+
+    public:
+        bool operator() (const Student& x, const Student& y) const {
+            return x < y;
+        }
+
+};
