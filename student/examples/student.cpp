@@ -63,7 +63,8 @@ int main() {
     preferences[alex] = alex_pref;
     preferences[frauke] = frauke_pref;
     preferences[lisa] = lisa_pref;
-
+    
+    // demo
     for (const auto& key: preferences) {
         std::cout << "Key: \t| " << key.first.get_first_name() << " |\nValue:\t| ";
         for (const auto& value: key.second) {
