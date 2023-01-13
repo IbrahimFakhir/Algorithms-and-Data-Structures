@@ -141,6 +141,6 @@ EdgeSet DirectedGraph::get_incoming_edges(const Node& n) const {
 }
 EdgeSet DirectedGraph::get_incoming_edges(const index_t& idx) const {
 
-    get_incoming_edges(Node(idx));
+    return get_incoming_edges(Node(idx));
 
 }
