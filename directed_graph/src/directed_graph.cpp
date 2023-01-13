@@ -25,6 +25,30 @@ void DirectedGraph::insert_node(const index_t& idx) {
 
 }
 
+void DirectedGraph::delete_node(const Node& n) {
+
+    // erase node itself first
+    node_set.erase(n);
+
+    // delete all outgoing edges
+    for (const auto& e : outgoing_edges[n]) {
+        incoming_edges[e.get_end_node()].erase(e);
+        edge_set.erase(e);
+    }
+
+    // delete all incoming edges
+    for (const auto& e : incoming_edges[n]) {
+        outgoing_edges[e.get_start_node()].erase(e);
+        edge_set.erase(e);
+    }
+
+}
+void DirectedGraph::delete_node(const index_t& idx) {
+
+    delete_node(Node(idx));
+
+}
+
 bool DirectedGraph::exists_node(const Node& n) const {
 
     return node_set.count(n) >= 1;
