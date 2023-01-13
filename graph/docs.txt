@@ -1,4 +1,4 @@
 
-build-command for directed_graph (choose based on installed compiler):
-    clang++ -I./include src/directed_graph.cpp examples/directed_graph.cpp -o directed_graph
-    g++ -I./include src/directed_graph.cpp examples/directed_graph.cpp -o directed_graph
+build-command for simple_directed_graph (choose based on installed compiler):
+    clang++ -I./include src/simple_directed_graph.cpp examples/simple_directed_graph.cpp -o simple_directed_graph
+    g++ -I./include src/simple_directed_graph.cpp examples/simple_directed_graph.cpp -o simple_directed_graph
