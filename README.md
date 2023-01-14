@@ -12,10 +12,8 @@
 - sheet 10 task 2
 - sheet 11 task 1
 
-## graph folder
-- sheet 6 task 3
-- sheet 7 task 1
-- sheet 7 task 2
+## directed_graph folder
+- sheet 12 task 2
 
 ## recursion folder
 - sheet 5 task 2
