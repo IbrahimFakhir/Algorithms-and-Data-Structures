@@ -5,6 +5,8 @@
 
 #include <cstddef>
 #include <vector>
+#include <queue>
+#include <stack>
 #include <unordered_set>
 #include <unordered_map>
 #include <iostream>
@@ -64,7 +66,9 @@ class DirectedGraph {
 
         void print_graph() const;
         std::vector<Node> breath_first_search(const Node& start) const;
+        std::vector<Node> breath_first_search(const index_t& idx) const;
         std::vector<Node> depth_first_search(const Node& start) const;
+        std::vector<Node> depth_first_search(const index_t& idx) const;
 
     private:
         NodeSet node_set;

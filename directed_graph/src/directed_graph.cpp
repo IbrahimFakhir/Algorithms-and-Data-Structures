@@ -162,3 +162,72 @@ void DirectedGraph::print_graph() const {
     std::cout << std::endl;
 
 }
+std::vector<Node> DirectedGraph::breath_first_search(const Node& start) const {
+
+    // result in right order
+    std::vector<Node> result;
+    // already visited
+    std::unordered_set<Node, NodeHash> marked;
+    // to visit
+    std::queue<Node> queue;
+
+    queue.push(start);
+    while (!queue.empty()) {
+        Node& curr = queue.front();
+        queue.pop();
+
+        
+
+        if (marked.find(curr) == marked.end()) {
+            marked.insert(curr);
+            result.push_back(curr);
+            for (const auto& e : get_outgoing_edges(curr)) {
+                if (marked.find(e.get_end_node()) == marked.end()) {
+                    queue.push(e.get_end_node());
+                }
+            }
+        }
+    }
+
+    return result;
+
+}
+std::vector<Node> DirectedGraph::breath_first_search(const index_t& idx) const {
+
+    return breath_first_search(Node(idx));
+
+}
+
+std::vector<Node> DirectedGraph::depth_first_search(const Node& start) const {
+
+    // result in right order
+    std::vector<Node> result;
+    // already visited
+    std::unordered_set<Node, NodeHash> marked;
+    // to visit
+    std::stack<Node> stack;
+
+    stack.push(start);
+    while (!stack.empty()) {
+        Node& curr = stack.top();
+        stack.pop();
+
+        if (marked.find(curr) == marked.end()) {
+            marked.insert(curr);
+            result.push_back(curr);
+            for (const auto& e : get_outgoing_edges(curr)) {
+                if (marked.find(e.get_end_node()) == marked.end()) {
+                    stack.push(e.get_end_node());
+                }
+            }
+        }
+    }
+
+    return result;
+
+}
+std::vector<Node> DirectedGraph::depth_first_search(const index_t& idx) const {
+
+    return depth_first_search(Node(idx));
+
+}
