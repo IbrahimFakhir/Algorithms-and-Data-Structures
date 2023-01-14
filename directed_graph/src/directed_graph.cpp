@@ -167,23 +167,21 @@ std::vector<Node> DirectedGraph::breath_first_search(const Node& start) const {
     // result in right order
     std::vector<Node> result;
     // already visited
-    std::unordered_set<Node, NodeHash> marked;
+    std::unordered_set<Node, NodeHash> visited;
     // to visit
-    std::queue<Node> queue;
+    std::queue<Node> to_visit;
 
-    queue.push(start);
-    while (!queue.empty()) {
-        Node& curr = queue.front();
-        queue.pop();
-
-        
-
-        if (marked.find(curr) == marked.end()) {
-            marked.insert(curr);
-            result.push_back(curr);
-            for (const auto& e : get_outgoing_edges(curr)) {
-                if (marked.find(e.get_end_node()) == marked.end()) {
-                    queue.push(e.get_end_node());
+    to_visit.push(start);
+    while (!to_visit.empty()) {
+        Node& curr_node = to_visit.front();
+        to_visit.pop();
+        // if current node not already visited
+        if (visited.find(curr_node) == visited.end()) {
+            visited.insert(curr_node);
+            result.push_back(curr_node);
+            for (const auto& e : get_outgoing_edges(curr_node)) {
+                if (visited.find(e.get_end_node()) == visited.end()) {
+                    to_visit.push(e.get_end_node());
                 }
             }
         }
@@ -203,21 +201,21 @@ std::vector<Node> DirectedGraph::depth_first_search(const Node& start) const {
     // result in right order
     std::vector<Node> result;
     // already visited
-    std::unordered_set<Node, NodeHash> marked;
+    std::unordered_set<Node, NodeHash> visited;
     // to visit
-    std::stack<Node> stack;
+    std::stack<Node> to_visit;
 
-    stack.push(start);
-    while (!stack.empty()) {
-        Node& curr = stack.top();
-        stack.pop();
+    to_visit.push(start);
+    while (!to_visit.empty()) {
+        Node& curr = to_visit.top();
+        to_visit.pop();
 
-        if (marked.find(curr) == marked.end()) {
-            marked.insert(curr);
+        if (visited.find(curr) == visited.end()) {
+            visited.insert(curr);
             result.push_back(curr);
             for (const auto& e : get_outgoing_edges(curr)) {
-                if (marked.find(e.get_end_node()) == marked.end()) {
-                    stack.push(e.get_end_node());
+                if (visited.find(e.get_end_node()) == visited.end()) {
+                    to_visit.push(e.get_end_node());
                 }
             }
         }
