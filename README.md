@@ -1,9 +1,6 @@
 
 # practice for uni
 
-## arrays folder
-- sheet 4 task 2
-
 ## datatypes folder
 - sheet 8 task 1
 - sheet 8 task 2
