@@ -30,7 +30,7 @@ void DirectedGraph::delete_node(const Node& n) {
     // erase node itself first
     node_set.erase(n);
 
-    // delete all outgoing (from deleted node)edges
+    // delete all outgoing (from deleted node) edges
     for (const auto& e : outgoing_edges[n]) {
         incoming_edges[e.get_end_node()].erase(e);
         edge_set.erase(e);
