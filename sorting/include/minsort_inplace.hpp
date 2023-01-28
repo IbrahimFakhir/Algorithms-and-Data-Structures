@@ -2,4 +2,4 @@
 
 #include <vector>
 
-void minsort_inplace(std::vector<int>& array);
+std::vector<int> minsort_inplace(std::vector<int> array);
