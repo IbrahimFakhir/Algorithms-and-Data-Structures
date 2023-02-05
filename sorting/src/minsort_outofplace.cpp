@@ -13,7 +13,7 @@ std::vector<int> minsort_outofplace(std::vector<int>& A) {
             }
         }
         B[i] = min;
-        S.erase(min);
+        S.erase(S.find(min));
     }
 
     return B;
