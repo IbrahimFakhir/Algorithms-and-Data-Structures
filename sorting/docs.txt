@@ -6,3 +6,7 @@ build-command for minsort_inplace (choose based on installed compiler):
 build-command for mergesort_outofplace:
     clang++ -std=c++17 -I./include src/mergesort_outofplace.cpp examples/mergesort_outofplace.cpp -o mergesort_outofplace
     g++ -std=c++17 -I./include src/mergesort_outofplace.cpp examples/mergesort_outofplace.cpp -o mergesort_outofplace
+
+build-command for minort_outofplace:
+    clang++ -std=c++17 -I./include src/minsort_outofplace.cpp examples/minsort_outofplace.cpp -o minsort_outofplace
+    g++ -std=c++17 -I./include src/minsort_outofplace.cpp examples/minsort_outofplace.cpp -o minsort_outofplace
