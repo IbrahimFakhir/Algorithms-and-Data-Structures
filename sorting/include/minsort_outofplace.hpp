@@ -1,6 +1,8 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
+#include <unordered_set>
 
 /*
 *
@@ -9,4 +11,4 @@
 * @param given_array input array to be sorted
 * 
 */
-std::vector<int> minsort_outofplace(std::vector<int> given_array);
+std::vector<int> minsort_outofplace(std::vector<int>& input_array);

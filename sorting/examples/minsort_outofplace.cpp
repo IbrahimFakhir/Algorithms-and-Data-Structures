@@ -4,7 +4,7 @@
 
 int main() {
 
-    std::vector<int> unsorted = {5, 2, 7, 8, 1};
+    std::vector<int> unsorted = {7, 10, 5, 8, 2};
     for (int& num : unsorted) {
         std::cout << num << " ";
     }
