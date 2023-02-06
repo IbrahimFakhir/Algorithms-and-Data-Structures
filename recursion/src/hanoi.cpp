@@ -50,14 +50,3 @@ void Hanoi::solve_hanoi_recursively(int n, int from_tower, int help_tower, int t
     solve_hanoi_recursively(n-1, help_tower, from_tower, to_tower);
 
 }
-
-void Hanoi::solve(int n, int from_tower = 0, int help_tower = 1, int to_tower = 2) {
-
-    if (n == 1) {
-        move(from_tower, to_tower);
-        return;
-    }
-
-    
-
-}
