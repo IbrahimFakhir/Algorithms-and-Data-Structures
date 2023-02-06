@@ -164,18 +164,14 @@ void DirectedGraph::print_graph() const {
 }
 std::vector<Node> DirectedGraph::breath_first_search(const Node& start) const {
 
-    // result in right order
     std::vector<Node> result;
-    // already visited
     std::unordered_set<Node, NodeHash> visited;
-    // to visit
     std::queue<Node> to_visit;
 
     to_visit.push(start);
     while (!to_visit.empty()) {
         Node& curr_node = to_visit.front();
         to_visit.pop();
-        // if current node not already visited
         if (visited.find(curr_node) == visited.end()) {
             visited.insert(curr_node);
             result.push_back(curr_node);
