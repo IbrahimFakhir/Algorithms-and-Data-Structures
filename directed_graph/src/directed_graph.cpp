@@ -168,17 +168,18 @@ std::vector<Node> DirectedGraph::breath_first_search(const Node& start) const {
     std::unordered_set<Node, NodeHash> visited;
     std::queue<Node> to_visit;
 
+    visited.insert(start);
     to_visit.push(start);
+    result.push_back(start);
+
     while (!to_visit.empty()) {
         Node& curr_node = to_visit.front();
         to_visit.pop();
-        if (visited.find(curr_node) == visited.end()) {
-            visited.insert(curr_node);
-            result.push_back(curr_node);
-            for (const auto& e : get_outgoing_edges(curr_node)) {
-                if (visited.find(e.get_end_node()) == visited.end()) {
-                    to_visit.push(e.get_end_node());
-                }
+        for (const auto& e : get_outgoing_edges(curr_node)) {
+            if (visited.find(e.get_end_node()) == visited.end()) {
+                visited.insert(e.get_end_node());
+                to_visit.push(e.get_end_node());
+                result.push_back(e.get_end_node());
             }
         }
     }
