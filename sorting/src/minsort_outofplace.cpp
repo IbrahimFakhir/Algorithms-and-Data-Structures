@@ -1,6 +1,6 @@
 #include <minsort_outofplace.hpp>
 
-std::vector<int> minsort_outofplace(std::vector<int>& A) {
+std::vector<int> minsort_outofplace(const std::vector<int>& A) {
 
     std::vector<int> B(A.size());
     std::unordered_multiset<int> S(A.begin(), A.end());

@@ -11,4 +11,4 @@
 * @param given_array input array to be sorted
 * 
 */
-std::vector<int> minsort_outofplace(std::vector<int>& input_array);
+std::vector<int> minsort_outofplace(const std::vector<int>& input_array);
