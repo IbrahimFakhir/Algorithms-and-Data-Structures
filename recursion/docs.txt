@@ -1,4 +1,8 @@
 
+build-command for easy_problems (choose based on installed compiler):
+    clang++ -std=c++17 -I./include src/easy_problems.cpp examples/easy_problems.cpp -o easy_problems
+    g++ -std=c++17 -I./include src/easy_problems.cpp examples/easy_problems.cpp -o easy_problems
+
 build-command for hanoi (choose based on installed compiler): 
     clang++ -std=c++17 -I./include src/hanoi.cpp examples/hanoi.cpp -o hanoi
     g++ -std=c++17 -I./include src/hanoi.cpp examples/hanoi.cpp -o hanoi
