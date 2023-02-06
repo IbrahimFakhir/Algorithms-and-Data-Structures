@@ -1,6 +1,6 @@
 #include <minsort_inplace.hpp>
 
-void minsort_inplace(std::vector<int>& array) {
+std::vector<int> minsort_inplace(std::vector<int> array) {
 
     for (int i = 0; i < array.size(); i++) {
         int swap_index = i;
@@ -11,5 +11,7 @@ void minsort_inplace(std::vector<int>& array) {
         }
         std::swap(array[i], array[swap_index]);
     }
+
+    return array;
 
 }
