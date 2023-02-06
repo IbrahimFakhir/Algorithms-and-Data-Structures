@@ -12,10 +12,10 @@ void print_array(const std::vector<int>& array) {
 
 int main() {
 
-	std::vector<int> array = {5, 6, -32, 2, 0, 5};
-	print_array(array);
+  std::vector<int> array = {5, 6, -32, 2, 0, 5};
+  print_array(array);
 
-  array = minsort_inplace(array);
-	print_array(array);
+  minsort_inplace(array);
+  print_array(array);
 
 }
