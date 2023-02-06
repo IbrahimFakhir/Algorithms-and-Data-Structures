@@ -14,8 +14,7 @@ class Hanoi {
 
         void print_hanoi();
 
-        void solve_hanoi_recursively(int n, int from_tower = 0, int help_tower = 1, int to_tower = 2);
-
+        void solve(int n, int from_tower = 0, int help_tower = 1, int to_tower = 2);
     private:
         std::vector<std::vector<size_t>> towers;
 
