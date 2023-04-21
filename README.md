@@ -1,5 +1,5 @@
 
-# practice for uni
+# Algorithms and Data Structures
 
 ## datatypes folder
 - sheet 8 task 1
